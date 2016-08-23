@@ -5,14 +5,15 @@ Small project to create some basic generally useful HealthChecks for Umbraco pro
 
 ##Umbraco Test Site - Details
 
-- Username: admin@domain.com
-- Password: password
+- __Username__: admin@domain.com
+- __Password__: password
 
 
 ##HealthChecks
 
 
-__HumansTxtExists__: Test if a `humans.txt` file exists in the website root directory. If the file doesn't exist a skeleton file will be created with the following content:
+###HumansTxtExists
+Test if a `humans.txt` file exists in the website root directory. If the file doesn't exist a skeleton file will be created with the following content:
 
 ```
 # humanstxt.org/
@@ -35,7 +36,8 @@ __HumansTxtExists__: Test if a `humans.txt` file exists in the website root dire
 See http://humanstxt.org for more information.
 
 
-__RobotsTxtExists__: Test if a `robots.txt` file exists in the website root directory. If the file doesn't exist a skeleton file will be created with the following content:
+###RobotsTxtExists 
+Test if a `robots.txt` file exists in the website root directory. If the file doesn't exist a skeleton file will be created with the following content:
 
 ```
 User-agent: *   # match all bots
