@@ -308,7 +308,9 @@
     <Content Include="Config\Lang\da-DK.user.xml" />
     <Content Include="Config\Lang\de-DE.user.xml" />
     <Content Include="Config\Lang\en-GB.user.xml" />
-    <Content Include="Config\Lang\en-US.user.xml" />
+    <Content Include="Config\Lang\en-US.ORIG.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Config\Lang\es-ES.user.xml" />
     <Content Include="Config\Lang\fr-FR.user.xml" />
     <Content Include="Config\Lang\he-IL.user.xml" />
@@ -361,7 +363,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -369,6 +373,12 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HealthChecks\HealthChecks.csproj">
+      <Project>{e241dab7-0761-4817-8ea6-9f1e944c9ea8}</Project>
+      <Name>HealthChecks</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -405,6 +415,9 @@
     <Error Condition="!Exists('..\packages\UmbracoCms.7.5.0\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.5.0\build\UmbracoCms.targets'))" />
   </Target>
   <Import Project="..\packages\UmbracoCms.7.5.0\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.5.0\build\UmbracoCms.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>call $(SolutionDir)\BuildHelperScripts\copyConfig.bat</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
