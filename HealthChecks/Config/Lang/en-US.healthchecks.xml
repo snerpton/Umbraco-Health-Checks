@@ -2,6 +2,11 @@
 <language>
   <area alias="healthcheck">
 
+    <key alias="odinHumansCheckSuccess">Humans.txt exists at the root of the website</key>
+    <key alias="odinHumansCheckFailed">Unable to find a Humans.txt file</key>
+    <key alias="odinHumansRectifyButtonName">Create humans.txt</key>
+    <key alias="odinHumansRectifyDescription">You can fix this issue by creating a humans.txt file at the root of the website.</key>    
+    
     <key alias="seoRobotsCheckSuccess">Robots.txt exists at the root of the website</key>
     <key alias="seoRobotsCheckFailed">Unable to find a Robots.txt file</key>
     <key alias="seoRobotsRectifyButtonName">Create robots.txt</key>

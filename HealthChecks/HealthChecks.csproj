@@ -260,6 +260,7 @@
     <Folder Include="Odin\HealthChecks\ConfigurationChecks\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Odin\HealthChecks\GeneralChecks\HumansTxtExists.cs" />
     <Compile Include="Odin\HealthChecks\GeneralChecks\RobotsTxtExists.cs" />
   </ItemGroup>
   <ItemGroup>
